@@ -629,7 +629,7 @@ app.get('/api/signal_evaluate', function (request, response, next) {
 app.get('/api/fiscal_responsibility_score', function (request, response, next) {
   Promise.resolve()
     .then(async function () {
-      // get account informations
+      // get account information
       const accountsResponse = await client.accountsGet({
         access_token: ACCESS_TOKEN,
       });
@@ -661,8 +661,8 @@ app.get('/api/fiscal_responsibility_score', function (request, response, next) {
       }
 
       // sort by dates
-      const compareTxnsByDateAscending = (a, b) => (a.date < b.date) - (a.date > b.date);
-      added.sort(compareTxnsByDateAscending);
+      const compareTxnsByDateDescending = (a, b) => (a.date < b.date) - (a.date > b.date);
+      added.sort(compareTxnsByDateDescending);
 
       const score = accountsResponse.data.accounts.map(({account_id, balances, name}) => {
         // filter transaction data by account id
