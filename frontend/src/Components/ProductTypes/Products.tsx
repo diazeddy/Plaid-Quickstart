@@ -71,7 +71,7 @@ const Products = () => {
           transformData={transformTransactionsData}
         />
         <Endpoint
-          endpoint="/fiscal_responsibility_score"
+          endpoint="fiscal_responsibility_score"
           name="Fiscal Responsibility Score"
           categories={fiscalResponsibilityScoreCategories}
           schema=""
