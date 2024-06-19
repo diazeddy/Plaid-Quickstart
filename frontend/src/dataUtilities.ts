@@ -143,6 +143,11 @@ export interface ErrorDataItem {
   status_code: number | null;
 }
 
+export interface ScoreDataItem {
+  name: string;
+  score: number;
+}
+
 //all possible product data interfaces
 export type DataItem =
   | AuthDataItem
@@ -159,7 +164,8 @@ export type DataItem =
   | TransferAuthorizationDataItem
   | IncomePaystubsDataItem
   | SignalDataItem
-  | StatementsDataItem;
+  | StatementsDataItem
+  | ScoreDataItem;
 
 export type Data = Array<DataItem>;
 
@@ -181,6 +187,17 @@ export const authCategories: Array<Categories> = [
     field: "routing",
   },
 ];
+
+export const fiscalResponsibilityScoreCategories: Array<Categories> = [
+  {
+    title: "Name",
+    field: "name"
+  },
+  {
+    title: "Score",
+    field: "score"
+  }
+]
 
 export const transactionsCategories: Array<Categories> = [
   {
@@ -505,6 +522,10 @@ export const transformTransactionsData = (data: {
     return item;
   });
 };
+
+export const transformScoreData = (data: ScoreDataItem[]): Array<DataItem> => {
+  return data;
+}
 
 interface IdentityData {
   identity: IdentityGetResponse["accounts"];

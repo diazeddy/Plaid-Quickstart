@@ -18,6 +18,7 @@ import {
   transferAuthorizationCategories,
   signalCategories,
   statementsCategories,
+  fiscalResponsibilityScoreCategories,
   transformAuthData,
   transformTransactionsData,
   transformBalanceData,
@@ -31,7 +32,8 @@ import {
   transformTransferAuthorizationData,
   transformIncomePaystubsData,
   transformSignalData,
-  transformStatementsData
+  transformStatementsData,
+  transformScoreData
 } from "../../dataUtilities";
 
 const Products = () => {
@@ -59,6 +61,7 @@ const Products = () => {
         />
       )}
       {products.includes("transactions") && (
+        <>
         <Endpoint
           endpoint="transactions"
           name="Transactions"
@@ -67,6 +70,15 @@ const Products = () => {
           description="Retrieve transactions or incremental updates for credit and depository accounts."
           transformData={transformTransactionsData}
         />
+        <Endpoint
+          endpoint="/fiscal_responsibility_score"
+          name="Fiscal Responsibility Score"
+          categories={fiscalResponsibilityScoreCategories}
+          schema=""
+          description="Retrieve fiscal responsibility score of accounts."
+          transformData={transformScoreData}
+        />
+        </>
       )}
       {products.includes("identity") && (
         <Endpoint
