@@ -1,20 +1,17 @@
 # Plaid quickstart
+Set up the Plaid Quickstart (https://github.com/plaid/quickstart).
+Follow the instructions on steps 1-3 on the Github page. You don’t need to run within Docker. Pick a backend environment to work with - Node, Python, Ruby, Go, or Java.
+Calculate a fiscal responsibility score. This is based on the percentage of time in the past year that your checking account balances were positive. (Hint – look at transaction history)
+Display the score in the Quickstart UI
 
-This repository accompanies Plaid's [**quickstart guide**][quickstart].
+![Plaid quickstart app](/assets/quickstart.png)
 
-Here you'll find full example integration apps using our [**client libraries**][libraries].
-
-This Quickstart is designed to show as many products and configurations as possible, including all five officially supported client libraries and multiple Plaid APIs, against a React frontend. 
-
-If you prefer a non-React frontend platform, or a more minimal backend in one language with one endpoint, see the [Tiny Quickstart](https://github.com/plaid/tiny-quickstart), which shows a simpler backend and is available for JavaScript, Next.js, React, and React Native frontends.
-
-For Identity Verification, see the [Identity Verification Quickstart](https://github.com/plaid/idv-quickstart). 
-
-For Income, see the [Income sample app](https://github.com/plaid/income-sample). 
-
-For a more in-depth Transfer Quickstart, see the [Transfer Quickstart](https://github.com/plaid/transfer-quickstart) (Node only).
-
-![Plaid quickstart app](/assets/quickstart.jpeg)
+## Instructions to test the program
+- You can run the project by following below steps 2 and 3.
+  I used Node.js backend and backend will host on http://localhost:8000.
+  The frontend will host on http://localhost:3000.
+- After you sign in with sandbox environment, you may can find the `Fiscal Responsibility Score` section in the Producs area.
+- Click the `Send Request` button and you can see the score of each account.
 
 ## Table of contents
 
